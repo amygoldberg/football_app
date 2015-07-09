@@ -1,0 +1,9 @@
+## User stories
+
+1. Users can create an account or login and logout
+2. Users can edit account details
+3. Admin user can create master game week spreads
+4. Admin user can update master game week to add game winner
+5. Users can get the master game week and create a local copy
+6. Users can compare master game week wins to local game week to calculate week wins, total season win average
+7. Admin user and users can close game weeks

@@ -1,3 +1,3 @@
 class Team < ActiveRecord::Base
-  belongs_to :games
+  belongs_to :game
 end

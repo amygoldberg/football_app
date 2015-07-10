@@ -11,40 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709165436) do
+ActiveRecord::Schema.define(version: 20150710193951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "game_weeks", force: :cascade do |t|
-    t.string   "games"
-    t.integer  "week_number"
-    t.date     "season"
-    t.boolean  "master"
-    t.boolean  "status"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer "week_number"
+    t.date    "season"
+    t.boolean "master"
+    t.boolean "status"
+    t.integer "user_id"
   end
+
+  add_index "game_weeks", ["user_id"], name: "index_game_weeks_on_user_id", using: :btree
 
   create_table "games", force: :cascade do |t|
-    t.string   "team_1"
-    t.string   "team_2"
-    t.integer  "team_1_score"
-    t.integer  "team_2_score"
-    t.datetime "date"
-    t.integer  "spread"
+    t.integer  "team1_score"
+    t.integer  "team2_score"
+    t.datetime "game_date"
+    t.decimal  "spread"
     t.boolean  "status"
     t.string   "winner"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "game_week_id"
   end
 
+  add_index "games", ["game_week_id"], name: "index_games_on_game_week_id", using: :btree
+
   create_table "teams", force: :cascade do |t|
-    t.string   "name"
-    t.string   "logo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string  "name"
+    t.string  "logo_url"
+    t.integer "game_id"
   end
+
+  add_index "teams", ["game_id"], name: "index_teams_on_game_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -57,4 +57,7 @@ ActiveRecord::Schema.define(version: 20150709165436) do
     t.datetime "updated_at",   null: false
   end
 
+  add_foreign_key "game_weeks", "users"
+  add_foreign_key "games", "game_weeks"
+  add_foreign_key "teams", "games"
 end

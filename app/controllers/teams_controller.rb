@@ -1,13 +1,22 @@
 class TeamsController < ApplicationController
 
+  # GET /teams to show all the teams
   def index
     @teams = Team.all
     render json: @teams
   end
 
+  # GET /teams/:id
   def show
-    @team = Team.find(params[:id])
+    @teams = Team.find(params[:id])
     render json: @team
+  end
+
+  # DO I NEED THIS?
+  private
+   def team_params
+    params.require(:team)
+      .permit(:name, :logo)
   end
 
 end

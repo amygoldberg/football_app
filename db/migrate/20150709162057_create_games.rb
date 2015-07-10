@@ -5,6 +5,8 @@ class CreateGames < ActiveRecord::Migration
       t.string :team_2
       t.integer :team_1_score
       t.integer :team_2_score
+      t.datetime :date
+      t.integer :spread
       t.boolean :status
       t.string :winner
 

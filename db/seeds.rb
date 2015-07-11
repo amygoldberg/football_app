@@ -11,75 +11,128 @@ Game.destroy_all
 GameWeek.destroy_all
 User.destroy_all
 
-cards = Team.create!(name: 'arizona cardinals', logo_url: 'http://i.imgur.com/iWwMdeE.jpg')
+# all teams
+cardinals = Team.create!(name: 'arizona cardinals', logo_url: 'http://i.imgur.com/iWwMdeE.jpg')
 falcons= Team.create!(name: 'atlanta falcons', logo_url: 'http://i.imgur.com/0XvsIa0.jpg')
-team = Team.create!(name: 'baltimore ravens', logo_url: 'http://i.imgur.com/9rjX8Na.jpg')
-team = Team.create!(name: 'buffalo bills', logo_url: 'http://i.imgur.com/mI5I2oI.jpg')
-team = Team.create!(name: 'carolina panthers', logo_url: 'http://i.imgur.com/s0LF279.png')
-team = Team.create!(name: 'chicago bears', logo_url: 'http://i.imgur.com/2Ab0GCV.jpg')
-team = Team.create!(name: 'cincinnati bengals', logo_url: 'http://i.imgur.com/yJ0wltB.jpg')
-team = Team.create!(name: 'cleveland browns', logo_url: 'http://i.imgur.com/xHAJBL2.jpg')
-team = Team.create!(name: 'dallas cowboys', logo_url: 'http://i.imgur.com/scKemzR.jpg')
-team = Team.create!(name: 'denver broncos', logo_url: 'http://i.imgur.com/iT9rPfT.jpg')
-team = Team.create!(name: 'detroit lions', logo_url: 'http://i.imgur.com/wFpXa88.jpg')
-team = Team.create!(name: 'green bay packers', logo_url: 'http://i.imgur.com/pOAFXgB.jpg')
-team = Team.create!(name: 'houston texans', logo_url: 'http://i.imgur.com/nJIRXII.jpg')
-team = Team.create!(name: 'indianapolis colts', logo_url: 'http://i.imgur.com/BqQt3dg.jpg')
-team = Team.create!(name: 'jacksonville jaguars', logo_url: 'http://i.imgur.com/LObnYz0.jpg')
-team = Team.create!(name: 'kansas city chiefs', logo_url: 'http://i.imgur.com/cuDfShr.jpg')
-team = Team.create!(name: 'miami dolphins', logo_url: 'http://i.imgur.com/0mCWttB.jpg')
+ravens = Team.create!(name: 'baltimore ravens', logo_url: 'http://i.imgur.com/9rjX8Na.jpg')
+bills = Team.create!(name: 'buffalo bills', logo_url: 'http://i.imgur.com/mI5I2oI.jpg')
+panthers = Team.create!(name: 'carolina panthers', logo_url: 'http://i.imgur.com/s0LF279.png')
+bears = Team.create!(name: 'chicago bears', logo_url: 'http://i.imgur.com/2Ab0GCV.jpg')
+bengals = Team.create!(name: 'cincinnati bengals', logo_url: 'http://i.imgur.com/yJ0wltB.jpg')
+browns = Team.create!(name: 'cleveland browns', logo_url: 'http://i.imgur.com/xHAJBL2.jpg')
+cowboys = Team.create!(name: 'dallas cowboys', logo_url: 'http://i.imgur.com/scKemzR.jpg')
+broncos = Team.create!(name: 'denver broncos', logo_url: 'http://i.imgur.com/iT9rPfT.jpg')
+lions = Team.create!(name: 'detroit lions', logo_url: 'http://i.imgur.com/wFpXa88.jpg')
+packers = Team.create!(name: 'green bay packers', logo_url: 'http://i.imgur.com/pOAFXgB.jpg')
+texans = Team.create!(name: 'houston texans', logo_url: 'http://i.imgur.com/nJIRXII.jpg')
+colts = Team.create!(name: 'indianapolis colts', logo_url: 'http://i.imgur.com/BqQt3dg.jpg')
+jaguars = Team.create!(name: 'jacksonville jaguars', logo_url: 'http://i.imgur.com/LObnYz0.jpg')
+chiefs = Team.create!(name: 'kansas city chiefs', logo_url: 'http://i.imgur.com/cuDfShr.jpg')
+dolphins = Team.create!(name: 'miami dolphins', logo_url: 'http://i.imgur.com/0mCWttB.jpg')
 vikings = Team.create!(name: 'minnesota vikings', logo_url: 'http://i.imgur.com/SL3Rl7b.jpg')
-pats = Team.create!(name: 'new england patriots', logo_url: 'http://i.imgur.com/j4j1Nws.jpg')
+patriots = Team.create!(name: 'new england patriots', logo_url: 'http://i.imgur.com/j4j1Nws.jpg')
 saints = Team.create!(name: 'new orleans saints', logo_url: 'http://i.imgur.com/K1XlpfM.jpg')
-team = Team.create!(name: 'new york giants', logo_url: 'http://i.imgur.com/8HuIeOc.jpg')
+giants = Team.create!(name: 'new york giants', logo_url: 'http://i.imgur.com/8HuIeOc.jpg')
 jets = Team.create!(name: 'new york jets', logo_url: 'http://i.imgur.com/OPdUh1n.jpg')
-team = Team.create!(name: 'oakland raiders', logo_url: 'http://i.imgur.com/RMoxAiJ.png')
-team = Team.create!(name: 'philadelphia eagles', logo_url: 'http://i.imgur.com/daiv9fK.jpg')
-team = Team.create!(name: 'pittsburgh steelers', logo_url: 'http://i.imgur.com/Sb2KtZz.jpg')
-team = Team.create!(name: 'san diego chargers', logo_url: 'http://i.imgur.com/FBxUp1I.jpg')
-team = Team.create!(name: 'san fran 49s', logo_url: 'http://i.imgur.com/67FmKU7.jpg')
-team = Team.create!(name: 'seattle seahawks', logo_url: 'http://i.imgur.com/eR0NkrV.jpg')
+raiders = Team.create!(name: 'oakland raiders', logo_url: 'http://i.imgur.com/RMoxAiJ.png')
+eagles = Team.create!(name: 'philadelphia eagles', logo_url: 'http://i.imgur.com/daiv9fK.jpg')
+steelers = Team.create!(name: 'pittsburgh steelers', logo_url: 'http://i.imgur.com/Sb2KtZz.jpg')
+chargers = Team.create!(name: 'san diego chargers', logo_url: 'http://i.imgur.com/FBxUp1I.jpg')
+sanfran = Team.create!(name: 'san fran 49ers', logo_url: 'http://i.imgur.com/67FmKU7.jpg')
+seahawks = Team.create!(name: 'seattle seahawks', logo_url: 'http://i.imgur.com/eR0NkrV.jpg')
 rams = Team.create!(name: 'st. louis rams', logo_url: 'http://i.imgur.com/oi2XVEP.png')
-team = Team.create!(name: 'tampa bay buccaneers', logo_url: 'http://i.imgur.com/vpncYcM.jpg')
-team = Team.create!(name: 'tennessee titans', logo_url: 'http://i.imgur.com/iufErHD.jpg')
-team = Team.create!(name: 'washington redskins', logo_url: 'http://i.imgur.com/XpgCxIU.jpg')
+buccaneers = Team.create!(name: 'tampa bay buccaneers', logo_url: 'http://i.imgur.com/vpncYcM.jpg')
+titans = Team.create!(name: 'tennessee titans', logo_url: 'http://i.imgur.com/iufErHD.jpg')
+redskins = Team.create!(name: 'washington redskins', logo_url: 'http://i.imgur.com/XpgCxIU.jpg')
 
-
-# dennis is the admin
+# admin user is dennis
 dennis = User.create!(username: 'dennisq', password: 'dq', admin: true, name: 'dennis quackenbush', weekly_score: 0, total_score: 0)
 
-game_week1 = GameWeek.create!(week_number: 1, season: Date.parse("Sept 1, 2014"), master: true, status: false, user: dennis)
+# dennis game_week1 spreadsheet containing all the games for the week
+game_week1 = GameWeek.create!(week_number: 1, season: Date.parse("Sept 7, 2014"), master: true, status: false, user: dennis)
 
-# 9/7 1:00 ET New Orleans -3  At Atlanta
-game1 = Game.create!(status: false, spread: -3, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+# 1:00 ET games for game_week1
+game1 = Game.create!(status: false, spread: -3, game_date: Date.parse('Sept 7 2014'), game_week: game_week1)
 game1.teams << saints
 game1.teams << falcons
 game1.save!
 
-# 9/7 1:00 ET At St. Louis  -3.5  Minnesota
 game2 = Game.create!(status: false, spread: -3.5, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
 game2.teams << rams
 game2.teams << vikings
 game2.save!
 
-# user = User.create!(username: 'amyg', password: 'ag', admin: false, name: 'amy goldberg', weekly_score: 0, total_score: 0)
+game3 = Game.create!(status: false, spread: -6.5, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game3.teams << steelers
+game3.teams << browns
+game3.save!
 
-# week = GameWeek.create!(week_number: 1, season: '', master: true, status: false)
-# week.games.create!(team_1: 'new orleans saints', team_2: 'atlanta falcons', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 3)
-# week.games.create!(team_1: 'st. louis rams', team_2: 'minnesota vikings', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 3.5)
-# week.games.create!(team_1: 'pittsburgh steelers', team_2: 'cleveland browns', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 6.5)
-# week.games.create!(team_1: 'philadelphia eagles', team_2: 'jacksonville jaguars', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 10.5)
-# week.games.create!(team_1: 'new york jets', team_2: 'oakland raiders', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 5.5)
-# week.games.create!(team_1: 'baltimore ravens', team_2: 'cincinnati bengals', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 1.5)
-# week.games.create!(team_1: 'chicago bears', team_2: 'buffalo bills', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 7)
-# week.games.create!(team_1: 'houston texans', team_2: 'washington redskins', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 3)
-# week.games.create!(team_1: 'kansas city chiefs', team_2: 'tennessee titans', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 3)
-# week.games.create!(team_1: 'new england patriots', team_2: 'miami dolphins', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 4.5)
-# week.games.create!(team_1: 'tampa bay buccaneers', team_2: 'carolina panthers', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 2.5)
-# week.games.create!(team_1: 'san fran 49ers', team_2: 'dallas cowboys', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 4.5)
-# week.games.create!(team_1: 'denver broncos', team_2: 'indianapolis colts', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 7.5)
-# week.games.create!(team_1: 'detroit lions', team_2: 'new york giants', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 6)
-# week.games.create!(team_1: 'arizona cardinals', team_2: 'san diego chargers', team_1_score: , team_2_score: , status: false, winner: '', datetime: , spread: 3)
+game4 = Game.create!(status: false, spread: -10.5, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game4.teams << eagles
+game4.teams << jaguars
+game4.save!
+
+game5 = Game.create!(status: false, spread: -5.5, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game5.teams << jets
+game5.teams << raiders
+game5.save!
+
+game6 = Game.create!(status: false, spread: -1.5, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game6.teams << ravens
+game6.teams << bengals
+game6.save!
+
+game7 = Game.create!(status: false, spread: -7, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game7.teams << bears
+game7.teams << bills
+game7.save!
+
+game8 = Game.create!(status: false, spread: -3, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game8.teams << texans
+game8.teams << redskins
+game8.save!
+
+game9 = Game.create!(status: false, spread: -3, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game9.teams << chiefs
+game9.teams << titans
+game9.save!
+
+game10 = Game.create!(status: false, spread: -4.5, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game10.teams << patriots
+game10.teams << dolphins
+game10.save!
+
+# 4:25 ET games for game_week1
+game11 = Game.create!(status: false, spread: -2.5, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game11.teams << buccaneers
+game11.teams << panthers
+game11.save!
+
+game12 = Game.create!(status: false, spread: -4.5, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game12.teams << sanfran
+game12.teams << cowboys
+game12.save!
+
+# 8:30 ET games for game_week1
+game13 = Game.create!(status: false, spread: -7.5, game_date: Date.parse('7th Sept 2014'), game_week: game_week1)
+game13.teams << broncos
+game13.teams << colts
+game13.save!
+
+# Monday nights games for game_week1 7:10 ET
+game14 = Game.create!(status: false, spread: -6, game_date: Date.parse('8th Sept 2014'), game_week: game_week1)
+game14.teams << lions
+game14.teams << giants
+game14.save!
+
+# 10:25 ET
+game15 = Game.create!(status: false, spread: -3, game_date: Date.parse('8th Sept 2014'), game_week: game_week1)
+game15.teams << cardinals
+game15.teams << chargers
+game15.save!
+
+# non-admin user amy
+user = User.create!(username: 'amyg', password: 'ag', admin: false, name: 'amy goldberg', weekly_score: 0, total_score: 0)
 
 
 # Date & Time Favorite  Spread  Underdog

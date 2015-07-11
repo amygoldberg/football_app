@@ -12,7 +12,6 @@ class TeamsController < ApplicationController
     render json: @team
   end
 
-  # DO I NEED THIS?
   private
    def team_params
     params.require(:team)

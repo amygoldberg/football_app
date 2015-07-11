@@ -2,11 +2,15 @@ Rails.application.routes.draw do
 
   # get '/teams' => 'teams#index'
 
-  resources :teams do
+  resources :users do
+    resources :game_weeks do
+      resources :games do
+        resources :teams
+      end
+    end
   end
 
-  resources :users do
-  end
+end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -63,4 +67,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+# end

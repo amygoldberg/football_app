@@ -22,10 +22,6 @@ default: &default
   pool: 5
 
 development:
-  adapter: postgresql
-  host: localhost
-  username: amygoldberg
-  database: app-dev
   <<: *default
   database: football_app_development
 

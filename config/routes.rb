@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 # define an index homepage to get all users for heroku
-get '/users' => 'users#index'
+# get '/users' => 'users#index'
 
   resources :users do
     resources :game_weeks do

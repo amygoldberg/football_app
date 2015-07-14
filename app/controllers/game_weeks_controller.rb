@@ -1,4 +1,4 @@
-class GameWeeksController < ApplicationController
+class GameWeeksController < ProtectedController
 
   # set_user as a private method
   before_action :set_user

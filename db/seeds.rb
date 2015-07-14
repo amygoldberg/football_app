@@ -45,8 +45,8 @@ buccaneers = Team.create!(name: 'tampa bay buccaneers', logo_url: 'http://i.imgu
 titans = Team.create!(name: 'tennessee titans', logo_url: 'http://i.imgur.com/iufErHD.jpg')
 redskins = Team.create!(name: 'washington redskins', logo_url: 'http://i.imgur.com/XpgCxIU.jpg')
 
-# admin user is dennis
-dennis = User.create!(username: 'dennisq', password: 'dq', admin: true, name: 'dennis quackenbush', weekly_score: 0, total_score: 0)
+# # admin user is dennis
+dennis = User.create!(username: 'dennisq', password: 'dq', email: 'dqphysics@gmail.com', admin: true, name: 'dennis quackenbush', weekly_score: 0, total_score: 0)
 
 # dennis game_week1 spreadsheet containing all the games for the week
 game_week1 = GameWeek.create!(week_number: 1, season: Date.parse("Sept 7, 2014"), master: true, status: false, user: dennis)
@@ -132,7 +132,7 @@ game15.teams << chargers
 game15.save!
 
 # non-admin user amy
-user = User.create!(username: 'amyg', password: 'ag', admin: false, name: 'amy goldberg', weekly_score: 0, total_score: 0)
+amy = User.create!(username: 'amyg', password: 'ag', email: 'amykgoldberg@gmail.com', admin: false, name: 'amy goldberg', weekly_score: 0, total_score: 0)
 
 
 # Date & Time Favorite  Spread  Underdog

@@ -1,4 +1,4 @@
-class GamesController < ApplicationController
+class GamesController < ProtectedController
 
   before_action :set_game_week
 

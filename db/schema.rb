@@ -53,9 +53,15 @@ ActiveRecord::Schema.define(version: 20150710193951) do
     t.string   "name"
     t.integer  "weekly_score"
     t.integer  "total_score"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
+    t.string   "token",           null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
   add_foreign_key "game_weeks", "users"
   add_foreign_key "games", "game_weeks"

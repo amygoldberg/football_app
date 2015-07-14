@@ -22,15 +22,15 @@ class GameWeeksController < ApplicationController
 
   # ONLY an admin should be able to create a new game_week --> IF admin ?
   # POST /users/:user_id/game_weeks
-  def create
-    @game_week = @user.game_weeks.build(game_week_params)
+#   def create
+#     @game_week = @user.game_weeks.build(game_week_params)
 
-    if @game_week.save
-      render json: @game_week, status: :created
-    else
-      render json: @game_week.errors, status: :unprocessable_entity
-  end
-end
+#     if @game_week.save
+#       render json: @game_week, status: :created
+#     else
+#       render json: @game_week.errors, status: :unprocessable_entity
+#   end
+# end
 
   private
 
@@ -38,8 +38,8 @@ end
     @user = User.find(params[:user_id])
   end
 
-  def game_week_params
-    params.require(:game_weeks).permit(:week_number, :season)
-  end
+  # def game_week_params
+  #   params.require(:game_weeks).permit(:week_number, :season)
+  # end
 
 end

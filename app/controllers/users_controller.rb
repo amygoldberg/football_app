@@ -26,7 +26,7 @@ class UsersController < ProtectedController
 
   def user_params
     params.require(:user)
-    .permit(:name, :username)
+    .permit(:name, :username, :email)
   end
 
 end

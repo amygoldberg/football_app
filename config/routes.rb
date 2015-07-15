@@ -8,15 +8,15 @@ Rails.application.routes.draw do
   post '/register', to: 'auth#register'
   post '/logout', to: 'auth#logout'
 
-  resources :users do
-    resources :game_weeks do
-      resources :games do
-        resources :teams
-      end
+  resources :users
+
+  resources :game_weeks do
+    resources :games do
+      resources :teams
     end
   end
 
-end
+end  # matches the Rails.application.routes.draw
 
 
   # The priority is based upon order of creation: first created -> highest priority.

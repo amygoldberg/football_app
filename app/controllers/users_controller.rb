@@ -8,8 +8,8 @@ class UsersController < ProtectedController
 
   # GET /users/:id
   def show
-    @user = User.find(params[:id])
-    render json: @user
+    # @user = User.find(params[:id])
+    render json: current_user
   end
 
   # PATCH /users/:id

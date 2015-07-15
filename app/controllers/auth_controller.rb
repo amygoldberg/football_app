@@ -15,10 +15,10 @@ class AuthController < ApplicationController
   # bcrypt by default requires a password confirmation but merge says you do not need it
   # automatically merge with login params instead
   def register
-    @user = User.new(login_params.merge(password_confirmation: nil))
+    user = User.new(login_params.merge(password_confirmation: nil))
 
-    if @user.save!
-      render json: @user
+    if user.save!
+      render json: user
     else
       head :bad_request
     end

@@ -25,7 +25,6 @@ class GameWeeksController < ProtectedController
       games = params[:game_week][:games]
       game_week_params.delete "games"
       @game_week = current_user.game_weeks.create(game_week_params)
-      # @game_week.init(@user)
       if (@game_week.save)
         @game_week.create_games games
         render json: @game_week, status: :created

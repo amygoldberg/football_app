@@ -22,9 +22,12 @@ class GameWeeksController < ProtectedController
 
   def create
     if current_user.admin
+      games = params[:game_week][:games]
+      game_week_params.delete "games"
       @game_week = current_user.game_weeks.create(game_week_params)
       # @game_week.init(@user)
       if (@game_week.save)
+        @game_week.create_games games
         render json: @game_week, status: :created
       else
         render json: @game_week.errors, status: :unprocessable_entity
@@ -41,7 +44,7 @@ class GameWeeksController < ProtectedController
   # end
 
   def game_week_params
-    params.require(:game_week).permit(:week_number, :season, :master, :status, :user)
+    params.require(:game_week).permit(:week_number, :season, :master, :status, :user, :games)
   end
 
 end

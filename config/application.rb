@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
++= Dir[Railsrequire File.expand_path('../boot', __FILE__)
 
 require "rails"
 # Pick the frameworks you want:
@@ -26,13 +26,13 @@ module FootballApp
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    # config.i18n.load_path .root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.middleware.use Rack::Cors do
+    config.middleware.insert_before 0, "Rack::Cors" do
      allow do
        # WARNING: Allow ALL cross site scripting from ALL domains
        origins '*'
